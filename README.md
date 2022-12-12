@@ -1,1 +1,1 @@
-# mini_project_company-profile
+# mini_project_charity
