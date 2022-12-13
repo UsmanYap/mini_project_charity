@@ -3,7 +3,9 @@ import Donation from '../components/donation/Donation';
 
 const DonationPage = () => {
     return (
-        <Donation />
+        <>
+            <Donation />
+        </>
     );
 };
 

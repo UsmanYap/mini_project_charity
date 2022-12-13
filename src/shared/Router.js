@@ -1,21 +1,17 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import LoginPage from "../pages/LoginPage";
-import SignupPage from "../pages/SignupPage";
-import DonationPage from "../pages/DonationPage";
-import DetailPage from "../pages/DetailPage";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
+import Users from './Users';
+import Admin from './Admin';
 
 const Router = () => {
+  const role = false;
+  
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/donation" element={<DonationPage />} />
-        <Route path="/detail" element={<DetailPage />} />
-      </Routes>
+      <Navbar/>
+      <Users />
+      { role ? <Admin/> : <></> }
     </BrowserRouter>
   );
 };
