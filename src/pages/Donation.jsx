@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TransferPayment from '../components/donation/TransferPayment';
+import InputTransfer from '../components/donation/InputTransfer';
 import Input from '../components/input/Input';
 import InputName from '../components/input/InputName';
 
@@ -127,7 +127,7 @@ const Donation = () => {
                                     </div>
                                 </div>
 
-                                { payment.method ? <TransferPayment number={`${payment.number}`} method={`${payment.method}`} /> : <></>}
+                                { payment.method ? <InputTransfer placeholder={`Transfer to`} number={`${payment.number}`} method={`${payment.method}`} disable={true}/> : <></>}
                                 
 
                                 <div class="col-lg-12 col-12">

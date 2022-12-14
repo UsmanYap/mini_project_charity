@@ -6,7 +6,7 @@ import Users from './Users';
 import Admin from './Admin';
 
 const Router = () => {
-  const role = false;
+  const role = true;
   
   return (
     <BrowserRouter>

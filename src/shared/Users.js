@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import DetailPage from "../pages/DetailPage";
 import ListCharity from "../pages/ListCharity";
+import MyCharity from "../pages/MyCharity";
 
 const Users = () => {
   
@@ -16,6 +17,7 @@ const Users = () => {
             <Route exact path="/charity" element={<ListCharity />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/detail" element={<DetailPage />} />
+            <Route exact path="/mycharity" element={<MyCharity />} />
         </Routes>
     </>
       

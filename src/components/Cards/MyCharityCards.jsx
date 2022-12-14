@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CharityCards = (props) => {
+const MyCharityCards = (props) => {
 
     const { image, title, description, raised, goal } = props;
     const progress = raised / goal * 100;
 
     return (
-        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-4">
+        <div class="col-lg-4 col-md-4 col-12 mb-4 mb-lg-4">
             <div class="custom-block-wrap">
                 <img src={image}
                     class="custom-block-image img-fluid" alt=""/>
@@ -38,8 +38,8 @@ const CharityCards = (props) => {
 
                     <div className='col-12 row m-0'>
                         
-                    <Link to="/donation" class="custom-btn btn col-6">Detail</Link>
-                    <Link to="/donation" class="custom-btn btn col-6">Donate</Link>
+                        <Link to="/donation" class="custom-btn btn col-6">Detail</Link>
+                        <Link to="/donation" class="custom-btn-delete btn col-6">Delete</Link>
                     </div>
 
                 </div>
@@ -48,4 +48,4 @@ const CharityCards = (props) => {
     )
 }
 
-export default CharityCards;
+export default MyCharityCards;

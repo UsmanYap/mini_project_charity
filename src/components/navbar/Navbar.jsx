@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -20,39 +21,35 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <div className="nav-link click-scroll">Home</div>
+                                <Link to="/" className="nav-link click-scroll">Home</Link>
                             </li>
 
                             <li className="nav-item">
-                                <div className="nav-link click-scroll">About</div>
+                                <Link to="/charity" className="nav-link click-scroll">Charity</Link>
                             </li>
 
                             <li className="nav-item">
-                                <div className="nav-link click-scroll">Causes</div>
+                                <Link to="/mycharity" className="nav-link click-scroll">My Charity</Link>
                             </li>
 
-                            <li className="nav-item">
-                                <div className="nav-link click-scroll">Volunteer</div>
-                            </li>
-
-                            <li className="nav-item dropdown">
+                            {/* <li className="nav-item dropdown">
                                 <div className="nav-link click-scroll dropdown-toggle"
                                     id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">News</div>
+                                    aria-expanded="false">My Charity</div>
 
                                 <ul className="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                                     <li><div className="dropdown-item" >News Listing</div></li>
 
                                     <li><div className="dropdown-item" >News Detail</div></li>
                                 </ul>
-                            </li>
+                            </li> */}
 
                             <li className="nav-item">
                                 <div className="nav-link click-scroll" >Contact</div>
                             </li>
 
                             <li className="nav-item ms-3">
-                                <div className="nav-link custom-btn custom-border-btn btn">Donate</div>
+                                <Link to="Login" className="nav-link custom-btn custom-border-btn btn">Login</Link>
                             </li>
                         </ul>
                     </div>
