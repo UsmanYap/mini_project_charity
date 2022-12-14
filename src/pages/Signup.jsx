@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Input from '../input/Input';
-import InputName from '../input/InputName';
-
+import Input from '../components/input/Input';
+import InputName from '../components/input/InputName';
+import TitleInput from '../components/input/TitleInput';
 
 const Signup = () => {
 
@@ -23,21 +23,15 @@ const Signup = () => {
                             <h3 className="mb-4 text-center">Signup</h3>
 
                             <div className="row">
-                                <div className="col-lg-12 col-12">
-                                    <h5 className="mb-3">Name</h5>
-                                </div>
+                                <TitleInput title="Name" />
 
                                 <InputName onChangeFirst={onChangeExp} onChangeLast={onChangeExp} />
 
-                                <div className="col-lg-12 col-12 mt-4">
-                                    <h5 className="mb-2">Email</h5>
-                                </div>
+                                <TitleInput title="Email" />
 
                                 <Input name="Email" type="email" onChange={onChangeExp}/>
 
-                                <div className="col-lg-12 col-12 mt-4 mb-1">
-                                    <h5 className="mb-2">Password</h5>
-                                </div>
+                                <TitleInput title="Password" />
 
                                 <Input name="Password" type="password" onChange="onChangeExp"/>
 

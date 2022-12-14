@@ -14,15 +14,15 @@ const Footer = () => {
                     <h5 class="site-footer-title mb-3">Quick Links</h5>
 
                     <ul class="footer-menu">
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Our Story</a></li>
+                        <li class="footer-menu-item"><div class="footer-menu-link">Our Story</div></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Newsroom</a></li>
+                        <li class="footer-menu-item"><div class="footer-menu-link">Newsroom</div></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Causes</a></li>
+                        <li class="footer-menu-item"><div class="footer-menu-link">Causes</div></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Become a volunteer</a></li>
+                        <li class="footer-menu-item"><div class="footer-menu-link">Become a volunteer</div></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Partner with us</a></li>
+                        <li class="footer-menu-item"><div class="footer-menu-link">Partner with us</div></li>
                     </ul>
                 </div>
 
@@ -32,17 +32,17 @@ const Footer = () => {
                     <p class="text-white d-flex mb-2">
                         <i class="bi-telephone me-2"></i>
 
-                        <a href="tel: 305-240-9671" class="site-footer-link">
+                        <div class="site-footer-link">
                             305-240-9671
-                        </a>
+                        </div>
                     </p>
 
                     <p class="text-white d-flex">
                         <i class="bi-envelope me-2"></i>
 
-                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                        <div class="site-footer-link">
                             donate@charity.org
-                        </a>
+                        </div>
                     </p>
 
                     <p class="text-white d-flex mt-3">
@@ -50,7 +50,7 @@ const Footer = () => {
                         Akershusstranda 20, 0150 Oslo, Norway
                     </p>
 
-                    <a href="#" class="custom-btn btn mt-3">Get Direction</a>
+                    <div class="custom-btn btn mt-3">Get Direction</div>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@ const Footer = () => {
                 <div class="row">
 
                     <div class="col-lg-6 col-md-7 col-12">
-                        <p class="copyright-text mb-0">Copyright © 2036 <a href="#">Kind Heart</a> Charity Org.
+                        <p class="copyright-text mb-0">Copyright © 2036 <a>Kind Heart</a> Charity Org.
                             Design: <a href="https://templatemo.com" target="_blank">TemplateMo</a>Distribution:
                             <a href="https://themewagon.com">ThemeWagon</a>
                         </p>
@@ -69,23 +69,23 @@ const Footer = () => {
                     <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
                         <ul class="social-icon">
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                <div class="social-icon-link bi-twitter"></div>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                <div class="social-icon-link bi-facebook"></div>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-instagram"></a>
+                                <div class="social-icon-link bi-instagram"></div>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-linkedin"></a>
+                                <div class="social-icon-link bi-linkedin"></div>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="https://youtube.com/templatemo" class="social-icon-link bi-youtube"></a>
+                                <div class="social-icon-link bi-youtube"></div>
                             </li>
                         </ul>
                     </div>

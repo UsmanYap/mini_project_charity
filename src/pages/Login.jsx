@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Input from '../input/Input';
+import Input from '../components/input/Input';
+import TitleInput from '../components/input/TitleInput';
 
 
 const Login = () => {
@@ -18,15 +19,11 @@ const Login = () => {
                                 <h3 className="mb-4 text-center">Login</h3>
 
                                 <div className="row">
-                                    <div className="col-lg-12 col-12">
-                                        <h5 className="mb-2">Email</h5>
-                                    </div>
+                                    <TitleInput title="Email" />
 
                                     <Input name="Email" type="email"/>
 
-                                    <div className="col-lg-12 col-12 mt-3">
-                                        <h5 className="mb-3">Password</h5>
-                                    </div>
+                                    <TitleInput title="Password" />
 
                                     <Input name="Password" type="password"/>
 

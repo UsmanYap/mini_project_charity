@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import DonationPage from "../pages/DonationPage";
+import DonationPage from "../pages/Donation";
 
-const Users = () => {
+const Admin = () => {
   
   return (
     <>
@@ -14,4 +14,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default Admin;

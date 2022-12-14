@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import TransferPayment from './TransferPayment';
-import Input from '../input/Input';
-import InputName from '../input/InputName';
+import TransferPayment from '../components/donation/TransferPayment';
+import Input from '../components/input/Input';
+import InputName from '../components/input/InputName';
 
 const Donation = () => {
 
