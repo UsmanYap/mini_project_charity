@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../pages/HomePage";
+import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import DetailPage from "../pages/DetailPage";
@@ -12,7 +12,7 @@ const Users = () => {
   return (
     <>
         <Routes>
-            <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/charity" element={<ListCharity />} />
             <Route exact path="/signup" element={<Signup />} />
