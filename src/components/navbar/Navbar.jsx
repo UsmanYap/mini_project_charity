@@ -1,7 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../redux/actions/auth';
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const { isLoggedIn } = useSelector(state => state.auth);
+
+    const onHandle = () => {
+        dispatch(logout()).then(() => {
+            window.location.reload(true);
+        })
+    }
+
+    // const user = JSON.parse(localStorage.getItem('user'));
+
     return (
             <nav className="navbar navbar-expand-lg bg-light shadow-lg">
                 <div className="container">
@@ -32,6 +47,8 @@ const Navbar = () => {
                                 <Link to="/mycharity" className="nav-link click-scroll">My Charity</Link>
                             </li>
 
+                            
+
                             {/* <li className="nav-item dropdown">
                                 <div className="nav-link click-scroll dropdown-toggle"
                                     id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
@@ -49,7 +66,10 @@ const Navbar = () => {
                             </li>
 
                             <li className="nav-item ms-3">
-                                <Link to="Login" className="nav-link custom-btn custom-border-btn btn">Login</Link>
+                                { isLoggedIn ? 
+                                    <button onClick={onHandle} className="nav-link custom-btn custom-border-btn btn">Logout</button> : 
+                                    <Link to={`${process.env.PUBLIC_URL}/login`} className="nav-link custom-btn custom-border-btn btn">Login</Link>
+                                }
                             </li>
                         </ul>
                     </div>

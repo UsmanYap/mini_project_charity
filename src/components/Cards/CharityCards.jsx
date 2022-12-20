@@ -2,9 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CharityCards = (props) => {
-
     const { image, title, description, raised, goal } = props;
     const progress = raised / goal * 100;
+
+    const rupiah = (number)=>{
+        return new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR"
+        }).format(number);
+      }
 
     return (
         <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-4">
@@ -25,21 +31,20 @@ const CharityCards = (props) => {
 
                         <div class="d-flex align-items-center my-2">
                             <p class="mb-0">
-                                <strong>Raised: </strong>
-                                 Rp. {raised}
+                                <strong>{'Raised: '}</strong>
+                                 {rupiah(raised)}
                             </p>
 
                             <p class="ms-auto mb-0">
-                                <strong>Goal:</strong>
-                                Rp. {goal}
+                                <strong>{'Goal: '}</strong>
+                                {rupiah(goal)}
                             </p>
                         </div>
                     </div>
 
-                    <div className='col-12 row m-0'>
-                        
-                    <Link to="/donation" class="custom-btn btn col-6">Detail</Link>
-                    <Link to="/donation" class="custom-btn btn col-6">Donate</Link>
+                    <div className='col-12 row m-0'> 
+                        <Link to="/donation" class="custom-btn btn col-6">Detail</Link>
+                        <Link to="/donation" class="custom-btn btn col-6">Donate</Link>
                     </div>
 
                 </div>

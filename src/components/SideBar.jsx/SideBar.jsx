@@ -1,12 +1,13 @@
 import React from 'react';
 
-const SideBar = () => {
+const SideBar = (props) => {
+    const func = props.onChange;
     return (
         <div className="col-lg-4 col-12 mx-auto mt-4 mt-lg-0">
             <div className="custom-form search-form" action="#" method="post" role="form">
-                <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                <input className="form-control" type="search" placeholder="Search" aria-label="Search" onChange={func} />
 
-                <button type="button" className="form-control">
+                <button type="button" className="form-control" >
                     <i className="bi-search"></i>
                 </button>
             </div>

@@ -9,8 +9,8 @@ import {
 
 import AuthService from '../../services/auth';
 
-export const register = (firstName, lastName, email, password) => dispatch => {
-    return AuthService.register(firstName, lastName, email, password).then(
+export const register = (firstName, lastName, email, password, repassword) => dispatch => {
+    return AuthService.register(firstName, lastName, email, password, repassword).then(
         response => {
             dispatch({
                 type: REGISTER_SUCCESS,
@@ -18,22 +18,27 @@ export const register = (firstName, lastName, email, password) => dispatch => {
 
             dispatch({
                 type: SET_MESSAGE,
-                payload: response.data.message,
+                payload: {
+                    message: response.data.message,
+                    status: response.status
+                },
             });
 
             return Promise.resolve();
         },
         error => {
-            const message = error.response.data.message;
+            const message = error.response;
 
             dispatch({
                 type: REGISTER_FAIL,
-                payload: message,
             });
 
             dispatch({
                 type: SET_MESSAGE,
-                payload: message,
+                payload: {
+                    message: message.data.message,
+                    status: message.status
+                },
             });
 
             return Promise.reject();
@@ -52,15 +57,19 @@ export const login = (email, password) => dispatch => {
             return Promise.resolve();
         },
         error => {
-            const message = error.response.data.message;
-
             dispatch({
                 type: LOGIN_FAIL,
             });
 
+            const message = error.response;
+
+
             dispatch({
                 type: SET_MESSAGE,
-                payload: message,
+                payload: {
+                    message: message.data.message,
+                    status: message.status
+                },
             });
 
             return Promise.reject();
@@ -69,9 +78,34 @@ export const login = (email, password) => dispatch => {
 };
 
 export const logout = () => dispatch => {
-    AuthService.logout();
-    
-    dispatch({
-        type: LOGOUT,
-    });
+    return AuthService.logout().then(
+        response => {
+            dispatch({
+                type: LOGOUT
+            });
+
+            dispatch({
+                type: SET_MESSAGE,
+                payload: {
+                    message: response.data.message,
+                    status: response.status
+                },
+            });
+
+            return Promise.resolve();
+        },
+        error => {
+            const message = error.response;
+
+            dispatch({
+                type: SET_MESSAGE,
+                payload: {
+                    message: message.data.message,
+                    status: message.status
+                },
+            });
+
+            return Promise.reject();
+        },
+    );
 };
