@@ -1,37 +1,41 @@
-import axios from 'axios';
+import api from '../api';
 
-const API_URL = 'http://localhost:8000';
-
-const register = (firstName, lastName, email, password) => {
-    return axios.post(`${API_URL}/users/register`, {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        password: password,
+const register = (firstName, lastName, email, password, repassword) => {
+    return api.post('/register', {
+        firstName, lastName, email, password, repassword
     });
 };
 
 const login = (email, password) => {
-    return axios.post(`${API_URL}/users/login`, {
+    return api.post('/login', {
         email: email,
         password: password,
     }).then(response => {
-        if (response.data.token) {
+        if (response.data.accessToken) {
             localStorage.setItem('user', JSON.stringify(response.data));
         }
-
         return response.data;
     });
 };
 
-const logout = () => {
-    localStorage.removeItem('user');
+const logout = (req, res) => {
+    try {
+        localStorage.removeItem('user');
+        window.location.reload();
+        return res.json({
+            message: "LOGOUT SUCCESS"
+        })
+    } catch (error) {
+        return res.json({
+            message: 'Failed Logout'
+        })
+    }
 };
 
-const authService = {
+const AuthService = {
     register,
     login,
     logout,
 };
 
-export default authService;
+export default AuthService;

@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
-
 export default function NotFound() {
     return (
-    <div>
-        <h1>Oops! You seem to be lost.</h1>
-        <p>Here are some helpful links:</p>
-        <Link to='/'>Home</Link>
-        <Link to='/blog'>Blog</Link>
-        <Link to='/contact'>Contact</Link>
-        </div>
+        <main>
+            <section class="section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12 text-center mx-auto">
+                            <h2 class="mb-5">Page not Found</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
     )
 }
